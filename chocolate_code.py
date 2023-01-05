@@ -12,7 +12,7 @@ import sys
 import shutil
 import json
 import logging
-import psycopg2 #to connect to postgresql DB
+import psycopg2-binary #to connect to postgresql DB
 from zipfile import ZipFile # importing the zipfile module
 from sqlalchemy import create_engine
 from botocore.exceptions import ClientError
@@ -99,7 +99,7 @@ def removeFolder(extract_path):
     shutil.rmtree(extract_path)
     logger('DEBUG', 'removed folder')
 
-# Populate secret variables
+# Populate AWS secret variables
 def populate_secrets():
     # Create a Secrets Manager client
     session = boto3.session.Session()
